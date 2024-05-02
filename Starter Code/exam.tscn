@@ -1,14 +1,15 @@
-[gd_scene load_steps=7 format=3 uid="uid://cnpyl8db228pu"]
+[gd_scene load_steps=8 format=3 uid="uid://cnpyl8db228pu"]
 
 [ext_resource type="Texture2D" uid="uid://dhbg8sqiay71n" path="res://sprites/GKrg0WaawAAlYaN.png" id="1_1v0xq"]
 [ext_resource type="Script" path="res://exam.gd" id="1_sgbsr"]
 [ext_resource type="Script" path="res://Guacamo_quantity.gd" id="2_rmc8e"]
 [ext_resource type="Script" path="res://Guacamo_Spawner.gd" id="3_xfqi0"]
+[ext_resource type="Script" path="res://Destruction.gd" id="5_rj8ut"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_j5f5j"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_h3ajb"]
-size = Vector2(1.21506, 1.72254)
+size = Vector2(1.21506, 1.41041)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_sgbsr")
@@ -45,8 +46,9 @@ texture = SubResource("CanvasTexture_j5f5j")
 [node name="StaticBody2D" type="StaticBody2D" parent="DESTROY"]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DESTROY/StaticBody2D"]
-position = Vector2(-0.00180516, 0.575145)
+position = Vector2(-3.14776e-08, 0.231214)
 shape = SubResource("RectangleShape2D_h3ajb")
+script = ExtResource("5_rj8ut")
 
 [connection signal="value_changed" from="CanvasLayer/VBoxContainer/Guacamo_quantity" to="CanvasLayer/VBoxContainer/Guacamo_quantity" method="_on_value_changed"]
 [connection signal="button_down" from="CanvasLayer/VBoxContainer/Guacamo_quantity/Button" to="CanvasLayer/VBoxContainer/Guacamo_quantity/Guacamo_Spawner" method="_on_button_button_down"]
