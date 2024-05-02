@@ -3,15 +3,15 @@
 [ext_resource type="Texture2D" uid="uid://dhbg8sqiay71n" path="res://sprites/GKrg0WaawAAlYaN.png" id="1_oqy6a"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nmbjl"]
-size = Vector2(536, 536)
+size = Vector2(108, 108)
 
-[node name="Guacamo" type="Node2D"]
+[node name="RigidBody2D" type="RigidBody2D"]
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_oqy6a")
-
-[node name="RigidBody2D" type="RigidBody2D" parent="Sprite2D"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Sprite2D/RigidBody2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_nmbjl")
+
+[node name="Guacamo" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Guacamo"]
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("1_oqy6a")

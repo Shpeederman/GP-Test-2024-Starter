@@ -1,9 +1,14 @@
-[gd_scene load_steps=5 format=3 uid="uid://cnpyl8db228pu"]
+[gd_scene load_steps=7 format=3 uid="uid://cnpyl8db228pu"]
 
 [ext_resource type="Texture2D" uid="uid://dhbg8sqiay71n" path="res://sprites/GKrg0WaawAAlYaN.png" id="1_1v0xq"]
 [ext_resource type="Script" path="res://exam.gd" id="1_sgbsr"]
 [ext_resource type="Script" path="res://Guacamo_quantity.gd" id="2_rmc8e"]
 [ext_resource type="Script" path="res://Guacamo_Spawner.gd" id="3_xfqi0"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_j5f5j"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h3ajb"]
+size = Vector2(1.21506, 1.72254)
 
 [node name="Node2D" type="Node2D"]
 script = ExtResource("1_sgbsr")
@@ -21,7 +26,7 @@ script = ExtResource("2_rmc8e")
 
 [node name="Guacamo_Spawner" type="Sprite2D" parent="CanvasLayer/VBoxContainer/Guacamo_quantity"]
 position = Vector2(500, 400)
-scale = Vector2(0.25, 0.25)
+scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_1v0xq")
 script = ExtResource("3_xfqi0")
 
@@ -31,6 +36,17 @@ offset_top = 20.0
 offset_right = 399.0
 offset_bottom = 51.0
 text = "Create Guacamo"
+
+[node name="DESTROY" type="Sprite2D" parent="."]
+position = Vector2(523, 953)
+scale = Vector2(1939, 173)
+texture = SubResource("CanvasTexture_j5f5j")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="DESTROY"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DESTROY/StaticBody2D"]
+position = Vector2(-0.00180516, 0.575145)
+shape = SubResource("RectangleShape2D_h3ajb")
 
 [connection signal="value_changed" from="CanvasLayer/VBoxContainer/Guacamo_quantity" to="CanvasLayer/VBoxContainer/Guacamo_quantity" method="_on_value_changed"]
 [connection signal="button_down" from="CanvasLayer/VBoxContainer/Guacamo_quantity/Button" to="CanvasLayer/VBoxContainer/Guacamo_quantity/Guacamo_Spawner" method="_on_button_button_down"]
