@@ -1,9 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://cnpyl8db228pu"]
+[gd_scene load_steps=9 format=3 uid="uid://cnpyl8db228pu"]
 
 [ext_resource type="Texture2D" uid="uid://dhbg8sqiay71n" path="res://sprites/GKrg0WaawAAlYaN.png" id="1_1v0xq"]
 [ext_resource type="Script" path="res://exam.gd" id="1_sgbsr"]
 [ext_resource type="Script" path="res://Guacamo_quantity.gd" id="2_rmc8e"]
 [ext_resource type="Script" path="res://Guacamo_Spawner.gd" id="3_xfqi0"]
+[ext_resource type="PackedScene" uid="uid://n44or25r4jla" path="res://Guacamo.tscn" id="5_34dqj"]
 [ext_resource type="Script" path="res://Destruction.gd" id="5_rj8ut"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_j5f5j"]
@@ -30,13 +31,14 @@ position = Vector2(500, 400)
 scale = Vector2(0.2, 0.2)
 texture = ExtResource("1_1v0xq")
 script = ExtResource("3_xfqi0")
+Guacamo = ExtResource("5_34dqj")
 
 [node name="Button" type="Button" parent="CanvasLayer/VBoxContainer/Guacamo_quantity"]
 layout_mode = 2
 offset_top = 20.0
 offset_right = 399.0
 offset_bottom = 51.0
-text = "Create Guacamo"
+text = "Create Guacamole"
 
 [node name="DESTROY" type="Sprite2D" parent="."]
 position = Vector2(523, 953)

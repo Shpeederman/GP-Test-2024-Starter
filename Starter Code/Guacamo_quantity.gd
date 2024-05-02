@@ -12,4 +12,5 @@ func _process(delta):
 
 
 func _on_value_changed(value):
-	pass # Replace with function body.
+	for i in range (value):
+		pass
