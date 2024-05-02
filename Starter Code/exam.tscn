@@ -19,6 +19,12 @@ layout_mode = 2
 max_value = 20.0
 script = ExtResource("2_rmc8e")
 
+[node name="Guacamo_Spawner" type="Sprite2D" parent="CanvasLayer/VBoxContainer/Guacamo_quantity"]
+position = Vector2(500, 400)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("1_1v0xq")
+script = ExtResource("3_xfqi0")
+
 [node name="Button" type="Button" parent="CanvasLayer/VBoxContainer/Guacamo_quantity"]
 layout_mode = 2
 offset_top = 20.0
@@ -26,11 +32,5 @@ offset_right = 399.0
 offset_bottom = 51.0
 text = "Create Guacamo"
 
-[node name="Guacamo_Spawner" type="Sprite2D" parent="CanvasLayer/VBoxContainer/Guacamo_quantity/Button"]
-position = Vector2(500, 380)
-scale = Vector2(0.25, 0.25)
-texture = ExtResource("1_1v0xq")
-script = ExtResource("3_xfqi0")
-
 [connection signal="value_changed" from="CanvasLayer/VBoxContainer/Guacamo_quantity" to="CanvasLayer/VBoxContainer/Guacamo_quantity" method="_on_value_changed"]
-[connection signal="button_down" from="CanvasLayer/VBoxContainer/Guacamo_quantity/Button" to="CanvasLayer/VBoxContainer/Guacamo_quantity/Button/Guacamo_Spawner" method="_on_button_button_down"]
+[connection signal="button_down" from="CanvasLayer/VBoxContainer/Guacamo_quantity/Button" to="CanvasLayer/VBoxContainer/Guacamo_quantity/Guacamo_Spawner" method="_on_button_button_down"]
