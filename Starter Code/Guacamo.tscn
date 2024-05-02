@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://n44or25r4jla"]
+[gd_scene load_steps=4 format=3 uid="uid://n44or25r4jla"]
 
 [ext_resource type="Texture2D" uid="uid://dhbg8sqiay71n" path="res://sprites/GKrg0WaawAAlYaN.png" id="1_oqy6a"]
+[ext_resource type="Script" path="res://OnCollision.gd" id="1_v858n"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_nmbjl"]
 size = Vector2(108, 108)
@@ -9,6 +10,7 @@ size = Vector2(108, 108)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_nmbjl")
+script = ExtResource("1_v858n")
 
 [node name="Guacamo" type="Node2D" parent="."]
 
